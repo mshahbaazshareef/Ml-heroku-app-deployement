@@ -1,0 +1,69 @@
+{% extends "bootstrap/base.html" %}
+{% block content %}
+
+
+<div class="container">
+  <div class="jumbotron" style="background-color:#1daeff !important;">
+    <h2 style="color:#fff;">Gender Classifier</h2>      
+    <p style="color:#fff;">Using Machine Learning </p>
+  </div>
+  <p>ML App.</p>           
+</div>
+
+
+<div class="panel-group">
+    <div class="panel panel-primary">
+      <div class="panel-heading" style="background-color:#1563ff ">Gender Classifier</div>
+      <div class="panel-body">
+      
+<!-- Main Input For Receiving Query to our ML -->	
+      	<form action="{{ url_for('predict')}}" method="POST">
+			<input type="text" name="namequery">
+			<button type="submit" class="btn btn-primary">Predict</button>
+			</form>
+
+<!-- Main Input For Receiving Query to our ML --> 
+
+
+      </div>
+    </div>
+
+<!-- Footer -->
+<footer class="page-footer font-small blue pt-4">
+
+  <!-- Footer Links -->
+  <div class="container-fluid text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-6 mt-md-0 mt-3">
+
+        <!-- Content -->
+        <h5 class="text-uppercase">Designed and Developed By</h5>
+        <p>Mohammed Shahbaaz Shareef</p>
+
+      </div>
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+
+
+</footer>
+<!-- Footer -->
+
+
+
+{% endblock %}
+
+{% block styles %}
+{{super()}} <!-- Allows Javascripts and other styles to be inclusive in bootstrap -->
+<link rel="stylesheet"
+      href="{{url_for('.static', filename='css/styles.css')}}">
+{% endblock %}
+
